@@ -11,7 +11,7 @@ things to do:
 
 - add box collider to the map object
 
-- make better UI\n
+- make better UI
 
 - implement skill of players (transform / catch ditto)
 
