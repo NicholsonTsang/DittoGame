@@ -16,4 +16,3 @@ things to do:
 -implement skill of players (transform / catch ditto)
 
 - spawn keys so that ditto can find them to win the game
-- 
