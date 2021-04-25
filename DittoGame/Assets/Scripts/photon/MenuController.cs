@@ -15,10 +15,13 @@ public class MenuController : MonoBehaviour
     [SerializeField] private InputField JoinGameInput;
 
     [SerializeField] private GameObject StartButton;
+    private bool joinedRoom = false;
+    public Text waitOpponentMsg;
 
     private void Awake()
     {
         PhotonNetwork.ConnectUsingSettings(VersionName);
+        waitOpponentMsg.enabled = false;
     }
 
     private void Start()
@@ -64,6 +67,17 @@ public class MenuController : MonoBehaviour
 
     private void OnJoinedRoom()
     {
-        PhotonNetwork.LoadLevel("MainGame");
+        //PhotonNetwork.LoadLevel("MainGame");
+        joinedRoom = true;
+        waitOpponentMsg.enabled = true;
+    }
+
+    private void Update()
+    {
+        Debug.Log("current room user number: " + PhotonNetwork.room.playerCount);
+        if (joinedRoom == true && PhotonNetwork.room.playerCount == 2)
+        {
+            PhotonNetwork.LoadLevel("MainGame");
+        }
     }
 }
