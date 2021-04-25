@@ -6,6 +6,9 @@ To run the game, go to scene "MainMenu" first
 location of players prefab:
 Assets\Photon Unity Networking\Resources
 
+Photon Link:
+4224c763-7471-4b90-8e6d-4955f39a41dc
+
 things to do:
 - add animation to player prefab
 
