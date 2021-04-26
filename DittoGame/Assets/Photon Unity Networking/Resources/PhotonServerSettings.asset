@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f3758f8f58fdef43803eb9be1df0608, type: 3}
   m_Name: PhotonServerSettings
   m_EditorClassIdentifier: 
-  AppID: 767c82f2-f8db-49ed-8808-9424771a9e48
+  AppID: 4224c763-7471-4b90-8e6d-4955f39a41dc
   VoiceAppID: 
   ChatAppID: 
   HostType: 1
@@ -31,6 +31,7 @@ MonoBehaviour:
   - Chat
   - ColorRpc
   - DestroyRpc
+  - disableSelectedRole
   - DoJump
   - Flash
   - FlipFalse
@@ -45,8 +46,6 @@ MonoBehaviour:
   - RequestForPickupItems
   - RequestForPickupTimes
   - TaggedPlayer
-  - checkDittoNum
-  - checkGuardNum
   - tellOpponentYourRole
-  - disableSelectedRole
+  - DestroyObject
   DisableAutoOpenWizard: 1

@@ -74,7 +74,7 @@ public class MenuController : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("current room user number: " + PhotonNetwork.room.playerCount);
+        //Debug.Log("current room user number: " + PhotonNetwork.room.playerCount);
         if (joinedRoom == true && PhotonNetwork.room.playerCount == 2)
         {
             PhotonNetwork.LoadLevel("MainGame");

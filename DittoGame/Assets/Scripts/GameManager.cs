@@ -15,7 +15,7 @@ public class GameManager : Photon.MonoBehaviour
     public Button dittoBtn;
     public Button guardBtn;
     private bool prefabGenerated = false;
-    
+
     private int myPlayRole = 0; // 1 for Ditto, 2 for Guard
 
 
@@ -50,10 +50,11 @@ public class GameManager : Photon.MonoBehaviour
     void disableSelectedRole(int role)
     {
         Debug.Log("Running the disable selected role Pun RPC");
-        if(role == 1)
+        if (role == 1)
         {
             dittoBtn.interactable = false;
-        }else if(role == 2)
+        }
+        else if (role == 2)
         {
             guardBtn.interactable = false;
         }
@@ -61,7 +62,7 @@ public class GameManager : Photon.MonoBehaviour
 
     private void Update()
     {
-        if(dittoBtn.interactable == false && guardBtn.interactable == false)
+        if (dittoBtn.interactable == false && guardBtn.interactable == false)
         {
             GameCanvas.SetActive(false);
             SceneCamera.SetActive(false);
@@ -78,15 +79,15 @@ public class GameManager : Photon.MonoBehaviour
         }
     }
 
-    
-    
-    
-    
-    
+
+
+
+
+
     [PunRPC]
     void tellOpponentYourRole(int role)
     {
-        Debug.Log(string.Format("Opponent Role is {0}",role));
+        Debug.Log(string.Format("Opponent Role is {0}", role));
     }
 
     public void testfunction()
