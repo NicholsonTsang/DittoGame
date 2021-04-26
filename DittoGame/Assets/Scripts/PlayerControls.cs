@@ -7,6 +7,7 @@ using System;
 public class PlayerControls : Photon.MonoBehaviour
 {
     public GameObject PlayerCamera;
+    public GameObject[] Setactivelist;
     public PhotonView photonView;
     public Text PlayerNameText;
     public SpriteRenderer sr;
@@ -32,6 +33,10 @@ public class PlayerControls : Photon.MonoBehaviour
             if (gameObject.tag == "Ditto")
                 guard_pointer.SetActive(true);
             PlayerNameText.text = PhotonNetwork.playerName;
+            for (int i = 0; i < Setactivelist.Length; i++)
+            {
+                Setactivelist[i].SetActive(true);
+            }
         }
         else
         {
