@@ -93,17 +93,21 @@ public class GameManager : Photon.MonoBehaviour
     public void testfunction()
     {
         Debug.Log("Running test function");
-        try
-        {
-            PhotonView photonView = PhotonView.Get(this);
-            Debug.Log(photonView);
-            //photonView.RPC("tellOpponentYourRole", PhotonTargets.Others, playerRole);
-            //this.photonView.RPC("tellOpponentYourRole", PhotonTargets.All, playerRole);
-        }
-        catch (Exception e)
-        {
-            Debug.LogError(e);
-        }
+        dittoBtn.interactable = false;
+        guardBtn.interactable = false;
+    }
+
+    public void WinningConditionTriggered()
+    {
+        Debug.Log("Go to Game Over Scene");
+        PhotonView photonView = PhotonView.Get(this);
+        photonView.RPC("toGameOverScene", PhotonTargets.All);
+    }
+
+    [PunRPC]
+    void toGameOverScene()
+    {
+        PhotonNetwork.LoadLevel("DittoWin");
     }
 
 }

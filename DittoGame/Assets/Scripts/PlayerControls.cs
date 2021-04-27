@@ -131,4 +131,15 @@ public class PlayerControls : Photon.MonoBehaviour
     {
         sr.flipX = false;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("collide with: " + collision.gameObject.name);
+        if(collision.gameObject.name == "ExitBtn")
+        {
+            Debug.Log("Winning condition triggered");
+            GameManager gameManager = (GameManager)GameObject.Find("GameManager").GetComponent(typeof(GameManager));
+            gameManager.WinningConditionTriggered();
+        }
+    }
 }

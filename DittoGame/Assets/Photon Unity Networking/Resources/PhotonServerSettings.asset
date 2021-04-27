@@ -30,6 +30,7 @@ MonoBehaviour:
   RpcList:
   - Chat
   - ColorRpc
+  - DestroyObject
   - DestroyRpc
   - disableSelectedRole
   - DoJump
@@ -47,5 +48,5 @@ MonoBehaviour:
   - RequestForPickupTimes
   - TaggedPlayer
   - tellOpponentYourRole
-  - DestroyObject
+  - toGameOverScene
   DisableAutoOpenWizard: 1
