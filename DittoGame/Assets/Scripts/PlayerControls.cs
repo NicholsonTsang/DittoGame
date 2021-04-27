@@ -61,10 +61,14 @@ public class PlayerControls : Photon.MonoBehaviour
             if (Input.GetKey(KeyCode.LeftArrow))
             {
                 v.x = -speed;
+                FlipTrue();
+                photonView.RPC("FlipTrue", PhotonTargets.AllBuffered);
             }
             else if (Input.GetKey(KeyCode.RightArrow))
             {
                 v.x = speed;
+                FlipFalse();
+                photonView.RPC("FlipFalse", PhotonTargets.AllBuffered);
             }
             else
             {
