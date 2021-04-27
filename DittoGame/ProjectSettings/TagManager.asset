@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - playersInfo
+  - Guard
+  - Pointer
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Wall
+  - Water
+  - UI
+  - mask
+  - behindmask
+  - black
+  - background
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: background
+    uniqueID: 1660710193
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: black
+    uniqueID: 79658141
+    locked: 0
+  - name: UI
+    uniqueID: 1368159729
+    locked: 0
