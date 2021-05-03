@@ -114,12 +114,14 @@ public class GameManager : Photon.MonoBehaviour
     [PunRPC]
     void toGameOverScene()
     {
+        PhotonNetwork.LeaveRoom();
         PhotonNetwork.LoadLevel("DittoWin");
     }
 
     [PunRPC]
     void toGameOverScene2()
     {
+        PhotonNetwork.LeaveRoom();
         PhotonNetwork.LoadLevel("GuardWin");
     }
 
