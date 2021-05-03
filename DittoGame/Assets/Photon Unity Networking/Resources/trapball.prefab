@@ -136,8 +136,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f0a345127c185c4b9759ae07e0b40ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 15
+  MoveSpeed: 10
   DestroyTime: 6
+  direction: {x: 0, y: 0}
 --- !u!114 &-1272974719218033914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,6 +161,7 @@ MonoBehaviour:
   ownershipTransfer: 0
   ObservedComponents:
   - {fileID: 3326580839824903266}
+  - {fileID: 3326580839824903278}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
   instantiationId: -1

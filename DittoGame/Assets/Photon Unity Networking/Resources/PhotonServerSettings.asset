@@ -49,4 +49,11 @@ MonoBehaviour:
   - TaggedPlayer
   - tellOpponentYourRole
   - toGameOverScene
+  - HideName
+  - ShowName
+  - toGameOverScene2
+  - fireleft
+  - firedown
+  - fireright
+  - fireup
   DisableAutoOpenWizard: 1

@@ -23,6 +23,9 @@ public class PlayerControls : Photon.MonoBehaviour
     public GameObject guard_pointer;
     public GameObject guard;
 
+    //animation
+    public Animator animator;
+
     // Start is called before the first frame update
     public void Awake()
     {
@@ -49,24 +52,25 @@ public class PlayerControls : Photon.MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         v = rb.velocity;
-        localpos = new Vector3 (0, 0, 0);
+        localpos = new Vector3(0, 0, 0);
         if (gameObject.tag == "Ditto")
             guard = GameObject.FindWithTag("Guard");
         warningDis = 20f;
     }
     void Update()
     {
+
         if (photonView.isMine)
         {
             if (Input.GetKey(KeyCode.LeftArrow))
             {
+                animator.SetFloat("moveX", 0);
                 v.x = -speed;
-                photonView.RPC("FlipTrue", PhotonTargets.AllBuffered);
             }
             else if (Input.GetKey(KeyCode.RightArrow))
             {
+                animator.SetFloat("moveX", 1);
                 v.x = speed;
-                photonView.RPC("FlipFalse", PhotonTargets.AllBuffered);
             }
             else
             {
@@ -84,11 +88,17 @@ public class PlayerControls : Photon.MonoBehaviour
             {
                 v.y = 0;
             }
-            rb.velocity = v;
+            if (rb.bodyType == RigidbodyType2D.Dynamic)
+            {
+                v = v.normalized * speed;
+                rb.velocity = v;
+            }
+            //else
+                //rb.velocity = Vector2.zero;
 
             Vector3 pos = transform.position;
             vision.GetComponent<FieldOfView>().SetOrigin(pos);
-            
+
             if (side == 0)
             {
                 if (guard == null)
@@ -112,12 +122,7 @@ public class PlayerControls : Photon.MonoBehaviour
                 }
 
             }
-            
-            if (side == 1)
-            {
-                //playersInfo.GetComponent<PlayerInfo>().Guard_Pos_Update(pos);
-                //Debug.Log(playersInfo.GetComponent<PlayerInfo>().guardpos);
-            }
+
 
         }
     }
@@ -137,17 +142,28 @@ public class PlayerControls : Photon.MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("collide with: " + collision.gameObject.name);
-        if( (collision.gameObject.name == "ExitBtn") && (gameObject.tag == "Ditto") )
+        if (collision.gameObject.name == "ExitBtn")
         {
             Debug.Log("Winning condition triggered");
             GameManager gameManager = (GameManager)GameObject.Find("GameManager").GetComponent(typeof(GameManager));
             gameManager.WinningConditionTriggered();
         }
 
-        if ( (collision.gameObject.tag == "Ditto") || (collision.gameObject.tag == "Guard") )
+        if (collision.gameObject.tag == "Guard")
         {
-            rb.velocity = new Vector2(0, 0);
-            Debug.Log("players colliding!");
+            if (rb.bodyType == RigidbodyType2D.Dynamic)
+            {
+                Debug.Log("Losing condition triggered");
+                GameManager gameManager = (GameManager)GameObject.Find("GameManager").GetComponent(typeof(GameManager));
+                gameManager.LosingConditionTriggered();
+            }
+        }
+
+        if ((collision.gameObject.tag == "trapball"))
+        {
+            Debug.Log("Losing condition triggered");
+            GameManager gameManager = (GameManager)GameObject.Find("GameManager").GetComponent(typeof(GameManager));
+            gameManager.LosingConditionTriggered();
         }
     }
 }

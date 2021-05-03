@@ -104,10 +104,23 @@ public class GameManager : Photon.MonoBehaviour
         photonView.RPC("toGameOverScene", PhotonTargets.All);
     }
 
+    public void LosingConditionTriggered()
+    {
+        Debug.Log("Go to Game Over Scene");
+        PhotonView photonView = PhotonView.Get(this);
+        photonView.RPC("toGameOverScene2", PhotonTargets.All);
+    }
+
     [PunRPC]
     void toGameOverScene()
     {
         PhotonNetwork.LoadLevel("DittoWin");
+    }
+
+    [PunRPC]
+    void toGameOverScene2()
+    {
+        PhotonNetwork.LoadLevel("GuardWin");
     }
 
 }

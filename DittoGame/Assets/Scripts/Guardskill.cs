@@ -12,6 +12,8 @@ public class Guardskill : Photon.MonoBehaviour
     public float cooldown1 = 5f;
     bool isCooldown = false;
     public KeyCode ability1;
+
+    public Vector2 direction;
     void Start()
     {
         abilityImage1.fillAmount = 0;
@@ -20,7 +22,14 @@ public class Guardskill : Photon.MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Ability1();
+        if (photonView.isMine)
+        {
+            Ability1();
+        }
+    }
+    public void changedir(Vector2 dir)
+    {
+        direction = dir;
     }
 
     public void Ability1()
@@ -46,7 +55,8 @@ public class Guardskill : Photon.MonoBehaviour
 
     public void Ability1Effect()
     {
-        GameObject ball = PhotonNetwork.Instantiate(trapball.name, new Vector2(FirePos.transform.position.x, FirePos.transform.position.y), Quaternion.identity, 0);
+        GameObject ball = PhotonNetwork.Instantiate(trapball.name, new Vector2(FirePos.transform.position.x + direction[0], FirePos.transform.position.y + direction[1]), Quaternion.identity, 0);
+        ball.GetComponent<trapball>().Setdirection(direction);
     }
     /*
     public void Ability2()
