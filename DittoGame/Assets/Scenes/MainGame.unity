@@ -4015,7 +4015,7 @@ GameObject:
   - component: {fileID: 904147033}
   - component: {fileID: 904147034}
   - component: {fileID: 904147035}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: room3_sink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6358,7 +6358,7 @@ GameObject:
   - component: {fileID: 1384631816}
   - component: {fileID: 1384631817}
   - component: {fileID: 1384631818}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: room2_printer1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
