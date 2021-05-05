@@ -9712,7 +9712,7 @@ GameObject:
   - component: {fileID: 1934092881}
   - component: {fileID: 1934092882}
   - component: {fileID: 1934092883}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: room4_coffeemachine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10197,7 +10197,7 @@ GameObject:
   - component: {fileID: 1956595272}
   - component: {fileID: 1956595273}
   - component: {fileID: 1956595274}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: room5_printer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
