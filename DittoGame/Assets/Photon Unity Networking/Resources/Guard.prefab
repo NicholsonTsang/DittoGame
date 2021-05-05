@@ -440,7 +440,7 @@ MonoBehaviour:
   trapball: {fileID: 3326580839824903267, guid: 742ba3ad7423fcf43b5a323e3a7e3637, type: 3}
   FirePos: {fileID: 3208293086535764868}
   abilityImage1: {fileID: 1190149520666530844}
-  cooldown1: 5
+  cooldown1: 10
   ability1: 119
   direction: {x: 0, y: 0}
 --- !u!1 &338932671088322063

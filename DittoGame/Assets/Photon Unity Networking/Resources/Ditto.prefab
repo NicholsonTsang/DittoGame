@@ -546,6 +546,12 @@ MonoBehaviour:
   PlayerCamera: {fileID: 6386071781299061895}
   Setactivelist:
   - {fileID: 5970720555336292312}
+  Buttonlist:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   photonView: {fileID: 6366622366427121643}
   PlayerNameText: {fileID: 5235613584981840876}
   sr: {fileID: 5917197523628555739}
