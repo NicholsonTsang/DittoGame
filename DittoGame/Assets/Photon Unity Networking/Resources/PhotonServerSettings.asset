@@ -34,9 +34,14 @@ MonoBehaviour:
   - DestroyRpc
   - disableSelectedRole
   - DoJump
+  - firedown
+  - fireleft
+  - fireright
+  - fireup
   - Flash
   - FlipFalse
   - FlipTrue
+  - HideName
   - InstantiateRpc
   - Marco
   - PickupItemInit
@@ -46,7 +51,9 @@ MonoBehaviour:
   - PunRespawn
   - RequestForPickupItems
   - RequestForPickupTimes
+  - ShowName
   - TaggedPlayer
   - tellOpponentYourRole
   - toGameOverScene
+  - toGameOverScene2
   DisableAutoOpenWizard: 1

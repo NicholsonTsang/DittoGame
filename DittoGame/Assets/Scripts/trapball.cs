@@ -9,6 +9,7 @@ public class trapball : Photon.MonoBehaviour
 
     public float DestroyTime;
 
+    public Vector2 direction;
     private void Awake()
     {
         StartCoroutine("DestroyByTime");
@@ -27,9 +28,14 @@ public class trapball : Photon.MonoBehaviour
         Destroy(this.gameObject);
     }
 
+    public void Setdirection(Vector2 dir)
+    {
+        direction = dir;
+    }
+
     public void Update()
     {
-        transform.Translate(Vector2.right * MoveSpeed * Time.deltaTime);
+        transform.Translate(direction * MoveSpeed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
